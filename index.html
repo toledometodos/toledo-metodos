@@ -14,7 +14,12 @@
     }
 
     body {
-      background: linear-gradient(180deg, #000000, #050505);
+      background: 
+        linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.95)),
+        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc'),
+        url('https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a');
+      background-size: cover;
+      background-blend-mode: overlay;
       color: white;
       text-align: center;
     }
@@ -26,25 +31,39 @@
     }
 
     .logo {
-      font-size: 34px;
-      font-weight: 800;
+      font-size: 36px;
+      font-weight: 900;
       color: #00ff88;
       letter-spacing: 2px;
       text-transform: uppercase;
-      text-shadow: 0 0 20px rgba(0,255,136,0.7);
+      text-shadow: 0 0 25px rgba(0,255,136,0.9);
       margin-bottom: 10px;
     }
 
-    .verified {
-      font-size: 12px;
+    .equipe {
+      font-size: 13px;
+      margin-bottom: 25px;
+      color: #ccc;
+    }
+
+    /* T SUPER CHAMATIVO */
+    .equipe span {
       color: #00ff88;
-      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      animation: neon 1s infinite alternate;
+    }
+
+    @keyframes neon {
+      from { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+      to { text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88; }
     }
 
     .headline {
-      font-size: 16px;
+      font-size: 15px;
       color: #ccc;
       margin-bottom: 25px;
+      line-height: 1.5;
     }
 
     .proof {
@@ -52,57 +71,67 @@
       border: 1px solid rgba(0,255,136,0.3);
       padding: 12px;
       border-radius: 10px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       font-size: 13px;
     }
 
-    .btn {
+    /* BOTÃO PRINCIPAL EXTREMAMENTE CHAMATIVO */
+    .btn-primary {
       display: block;
-      padding: 16px;
-      margin: 14px 0;
-      border-radius: 12px;
+      padding: 18px;
+      margin: 18px 0;
+      border-radius: 14px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 15px;
-      transition: 0.3s;
-    }
-
-    .primary {
+      font-size: 17px;
       background: linear-gradient(45deg, #00ff88, #00cc66);
       color: black;
-      box-shadow: 0 0 25px rgba(0,255,136,0.6);
-      animation: pulse 1.5s infinite;
+      animation: pulse 1s infinite;
+      box-shadow: 0 0 30px rgba(0,255,136,1);
     }
 
-    .primary:hover {
-      transform: scale(1.05);
+    .btn-primary:hover {
+      transform: scale(1.08);
     }
 
-    .secondary {
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 15px #00ff88; }
+      50% { transform: scale(1.08); box-shadow: 0 0 40px #00ff88; }
+      100% { transform: scale(1); box-shadow: 0 0 15px #00ff88; }
+    }
+
+    /* BOTÃO SECUNDÁRIO MENOS IMPORTANTE */
+    .btn-secondary {
+      display: block;
+      padding: 14px;
+      margin-top: 10px;
+      border-radius: 10px;
+      text-decoration: none;
       border: 1px solid #00ff88;
       color: #00ff88;
-      background: transparent;
+      font-size: 14px;
     }
 
-    .secondary:hover {
+    .btn-secondary:hover {
       background: #00ff88;
       color: black;
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px rgba(0,255,136,0.4); }
-      50% { box-shadow: 0 0 30px rgba(0,255,136,0.9); }
-      100% { box-shadow: 0 0 10px rgba(0,255,136,0.4); }
+    /* INDICADOR DE URGÊNCIA */
+    .live {
+      font-size: 12px;
+      color: #00ff88;
+      margin-bottom: 10px;
+      animation: blink 1s infinite;
     }
 
-    .divider {
-      margin: 25px 0;
-      height: 1px;
-      background: rgba(255,255,255,0.08);
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
     footer {
-      margin-top: 20px;
+      margin-top: 25px;
       font-size: 11px;
       color: #555;
     }
@@ -113,43 +142,37 @@
 
 <div class="container">
 
-  <!-- NOME FORTE -->
   <div class="logo">TOLEDO MÉTODOS</div>
-  <div class="verified">✔ Plataforma Oficial</div>
+
+  <div class="equipe">
+    Equipe <span>T</span>
+  </div>
 
   <div class="headline">
-    Método validado para gerar resultados reais<br>
-    <strong>Comece agora</strong>
+    Trabalhamos com métodos <strong>zero riscos</strong><br>
+    Especialistas em <strong>delay esportivo</strong>
   </div>
 
-  <!-- PROVA SOCIAL -->
   <div class="proof">
-    +1.200 pessoas já entraram 🚀<br>
-    Acesso liberado por tempo limitado
+    +1.200 pessoas já acessaram 🚀<br>
+    Vagas limitadas hoje
   </div>
+
+  <!-- URGÊNCIA -->
+  <div class="live">● 87 pessoas acessando agora</div>
 
   <!-- BOTÃO PRINCIPAL -->
-  <a class="btn primary" href="https://t.me/toledometodos" target="_blank">
-    💰 ENTRAR NO TELEGRAM AGORA
+  <a class="btn-primary" href="https://t.me/toledometodos" target="_blank">
+    💰 ACESSAR AGORA NO TELEGRAM
   </a>
 
-  <div class="divider"></div>
-
-  <!-- BOTÕES SECUNDÁRIOS -->
-  <a class="btn secondary" href="#">
-    📈 Ver resultados
-  </a>
-
-  <a class="btn secondary" href="#">
-    🎯 Como funciona
-  </a>
-
-  <a class="btn secondary" href="#">
+  <!-- SUPORTE -->
+  <a class="btn-secondary" href="https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2Fmessage%2FEF3UGFYGAMRUA1&e=AT7KhJ_f6GJGIYMfzGrTXJOKSsxkDZfz0JaL5jnEzKySgatbIf4Vq3uGmasSubv2cKOmoIMTUXbeAM9XZIxgX-2n4S51HdFiLDKYNdsF-RoBZMD2_qiP-hLdF4SIucv3k1v3E4UJAUrV" target="_blank">
     📲 Suporte
   </a>
 
   <footer>
-    © 2026 Toledo Métodos — Todos os direitos reservados
+    © 2026 Toledo Métodos
   </footer>
 
 </div>
