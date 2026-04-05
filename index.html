@@ -149,19 +149,21 @@
     Especialistas em <strong>delay esportivo</strong>
   </div>
 
+  <!-- PROVA SOCIAL -->
   <div class="proof">
-    +937 pessoas já acessaram 🚀<br>
+    +937 membros 🚀<br>
     Vagas limitadas hoje
   </div>
 
-  <div class="live">● 12 pessoas acessando agora</div>
+  <!-- CONTADOR DINÂMICO -->
+  <div class="live">● <span id="contador">12</span> pessoas acessando agora</div>
 
   <!-- BOTÃO PRINCIPAL -->
   <a class="btn-primary" href="https://t.me/toledometodos" target="_blank">
     💰 ACESSAR AGORA NO TELEGRAM
   </a>
 
-  <!-- SUPORTE ATUALIZADO -->
+  <!-- SUPORTE -->
   <a class="btn-secondary" href="https://wa.me/message/EF3UGFYGAMRUA1" target="_blank">
     📲 Suporte
   </a>
@@ -171,6 +173,21 @@
   </footer>
 
 </div>
+
+<!-- SCRIPT DO CONTADOR -->
+<script>
+  let numero = 12;
+
+  setInterval(() => {
+    let variacao = Math.floor(Math.random() * 3) - 1; // -1, 0 ou +1
+    numero += variacao;
+
+    if (numero < 10) numero = 10;
+    if (numero > 18) numero = 18;
+
+    document.getElementById("contador").innerText = numero;
+  }, 3000);
+</script>
 
 </body>
 </html>
