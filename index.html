@@ -16,10 +16,8 @@
     body {
       background: 
         linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.95)),
-        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc'),
-        url('https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a');
+        url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc');
       background-size: cover;
-      background-blend-mode: overlay;
       color: white;
       text-align: center;
     }
@@ -27,22 +25,27 @@
     .container {
       max-width: 420px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
-    .logo {
-      font-size: 36px;
-      font-weight: 900;
-      color: #00ff88;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-shadow: 0 0 25px rgba(0,255,136,0.9);
-      margin-bottom: 10px;
+    /* IMAGEM PRINCIPAL */
+    .logo-img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 40px rgba(0,255,136,0.9);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .equipe {
-      font-size: 13px;
-      margin-bottom: 25px;
+      font-size: 14px;
+      margin-bottom: 20px;
       color: #ccc;
     }
 
@@ -54,8 +57,8 @@
     }
 
     @keyframes neon {
-      from { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
-      to { text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88; }
+      from { text-shadow: 0 0 5px #00ff88; }
+      to { text-shadow: 0 0 25px #00ff88; }
     }
 
     .headline {
@@ -74,10 +77,23 @@
       font-size: 13px;
     }
 
+    .live {
+      font-size: 12px;
+      color: #00ff88;
+      margin-bottom: 10px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* BOTÃO PRINCIPAL */
     .btn-primary {
       display: block;
       padding: 18px;
-      margin: 18px 0;
+      margin: 20px 0;
       border-radius: 14px;
       text-decoration: none;
       font-weight: bold;
@@ -93,11 +109,12 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 15px #00ff88; }
-      50% { transform: scale(1.08); box-shadow: 0 0 40px #00ff88; }
-      100% { transform: scale(1); box-shadow: 0 0 15px #00ff88; }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
 
+    /* BOTÃO SUPORTE */
     .btn-secondary {
       display: block;
       padding: 14px;
@@ -114,18 +131,6 @@
       color: black;
     }
 
-    .live {
-      font-size: 12px;
-      color: #00ff88;
-      margin-bottom: 10px;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
     footer {
       margin-top: 25px;
       font-size: 11px;
@@ -138,7 +143,8 @@
 
 <div class="container">
 
-  <div class="logo">TOLEDO MÉTODOS</div>
+  <!-- SUA IMAGEM -->
+  <img src="https://i.imgur.com/6qE4Kzq.png" class="logo-img">
 
   <div class="equipe">
     Equipe <span>T</span>
@@ -149,18 +155,18 @@
     Especialistas em <strong>delay esportivo</strong>
   </div>
 
-  <!-- PROVA SOCIAL -->
   <div class="proof">
     +937 membros 🚀<br>
     Vagas limitadas hoje
   </div>
 
-  <!-- CONTADOR DINÂMICO -->
-  <div class="live">● <span id="contador">12</span> pessoas acessando agora</div>
+  <div class="live">
+    ● <span id="contador">12</span> pessoas acessando agora
+  </div>
 
-  <!-- BOTÃO PRINCIPAL -->
-  <a class="btn-primary" href="https://t.me/toledometodos" target="_blank">
-    💰 ACESSAR AGORA NO TELEGRAM
+  <!-- BOTÃO WHATSAPP -->
+  <a class="btn-primary" href="https://chat.whatsapp.com/HoIsLsVICoFIt0QWNgFjjn" target="_blank">
+    💰 ENTRAR NA COMUNIDADE DO WHATSAPP
   </a>
 
   <!-- SUPORTE -->
@@ -174,12 +180,11 @@
 
 </div>
 
-<!-- SCRIPT DO CONTADOR -->
 <script>
   let numero = 12;
 
   setInterval(() => {
-    let variacao = Math.floor(Math.random() * 3) - 1; // -1, 0 ou +1
+    let variacao = Math.floor(Math.random() * 3) - 1;
     numero += variacao;
 
     if (numero < 10) numero = 10;
